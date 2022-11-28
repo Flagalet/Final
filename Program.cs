@@ -9,12 +9,24 @@ string[] NewArray(string array)
     string[] res = new string[array.Length];
     for(int i = 0; i < count.Length; i++)
     {
-        if(count.Length <= 3)
-        {
             res[i] = count[i];
+    } 
+    return res; 
+}
+
+string[] CheckArray(string[] array)
+{
+    string[] num = new string[0];
+    string[] res = new string[array.Length];
+    for(int i = 0; i < array.Length; i++)
+    {
+        if(array[i].Length <= 3)
+        {
+            res[i] = array[i];
             return res;
         }
-    }  
+    }
+    return num;
 }
 
 void PrintArray(string [] array)
@@ -29,5 +41,6 @@ void PrintArray(string [] array)
 Console.Clear();
 Console.WriteLine("Введите Массив");
 string input = Console.ReadLine();
-string[] array = NewArray(input);
+string[] newarray = NewArray(input);
+string[] array = CheckArray(newarray);
 PrintArray(array);
